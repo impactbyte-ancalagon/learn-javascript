@@ -1,3 +1,3 @@
 # Learn JavaScript
 
-Learn JavaScript the hard way.
+Learn JavaScript the hard and fast way.

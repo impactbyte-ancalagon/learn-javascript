@@ -49,6 +49,14 @@ const time = {
   },
   yearNumber: dateObject => {
     return dateObject.getFullYear()
+  },
+  displayFull: dateObject => {
+    const chosenDay = time.dayString(dateObject)
+    const chosenDate = time.dateNumber(dateObject)
+    const chosenMonth = time.monthString(dateObject)
+    const chosenYear = time.yearNumber(dateObject)
+    const chosenFull = `${chosenDay}, ${chosenDate} ${chosenMonth} ${chosenYear}`
+    return chosenFull
   }
 }
 
@@ -57,11 +65,8 @@ const CUSTOM_DATE = time.createDateObject("10 January 2019")
 
 console.log("Today:", TODAY)
 
-const todayDay = time.dayString(TODAY)
-const todayDate = time.dateNumber(TODAY)
-const todayMonth = time.monthString(TODAY)
-const todayYear = time.yearNumber(TODAY)
-
-const todayFull = `${todayDay}, ${todayDate} ${todayMonth} ${todayYear}`
+const todayFull = time.displayFull(TODAY)
+const customFull = time.displayFull(CUSTOM_DATE)
 
 console.log(todayFull)
+console.log(customFull)
